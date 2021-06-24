@@ -169,7 +169,7 @@ def main():
         st.subheader(f"{chosen} (Accuracy: {round(model_accuracies[chosen]*100)}%)")
         st.markdown(model_descriptions[chosen])
 
-        image = Image.open('resources\imgs\Accuracy_scores.png')
+        image = Image.open('resources/imgs/Accuracy_scores.png')
         st.image(image, caption='Model Accuracies (F1-score)')
         st.markdown("Raw Twitter data and label")
         if st.checkbox('Show raw data'):  # data is hidden if box is unchecked
