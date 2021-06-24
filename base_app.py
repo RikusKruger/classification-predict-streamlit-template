@@ -120,7 +120,7 @@ def main():
 
     # Creating sidebar with selection box -
     # you can create multiple pages this way
-    options = ["Prediction", "Tutorial", "Model and Data Information"]
+    options = ["Prediction", "Tutorial", "Model Information", "EDA"]
     selection = st.sidebar.selectbox("Choose Option", options)
 
     # Defining model descriptions
@@ -163,7 +163,7 @@ def main():
                         "Random Forest": 0.6905}
     
     
-    if selection == "Model and Data Information":
+    if selection == "Model Information":
         
         chosen = st.radio('Model Selection', (list(model_descriptions.keys())))
         st.subheader(f"{chosen} (Accuracy: {round(model_accuracies[chosen]*100)}%)")
@@ -185,10 +185,55 @@ def main():
 
         st.markdown("Watch the video below to learn how to use the Tweet Classifier")
 
-        video_file = open('resources\Tutorial.mp4', 'rb')
+        video_file = open('resources/Tutorial.mp4', 'rb')
         video_bytes = video_file.read()
         st.video(video_bytes)
 
+    if selection == "EDA":
+
+        st.markdown("Sentiment Distribution")
+        pie = Image.open('resources/imgs/pie.png')
+        st.image(pie)
+
+        st.markdown("Message length Distribution")
+
+        message_length = Image.open('resources/imgs/message_length.png')
+        st.image(message_length)
+
+        st.markdown("User tag Distribution")
+
+        pie2 = Image.open('resources/imgs/pie2.png')
+        st.image(pie2)
+
+        st.markdown("Positive Sentiment Distribution by Tag")
+
+        positive = Image.open('resources/imgs/positive.png')
+        st.image(positive)
+        
+        st.markdown("Negative Sentiment Distribution by Tag")
+
+        negative = Image.open('resources/imgs/negative.png')
+        st.image(negative)
+        
+
+        st.markdown("News Sentiment Distribution by Tag")
+
+        news = Image.open('resources/imgs/news.png')
+        st.image(news)
+
+        st.markdown("Word Cloud showing most popular words in all tweets")
+
+        all_cloud = Image.open('resources/imgs/word_all.png')
+        st.image(all_cloud)
+
+        st.markdown("Word Cloud showing most popular words in Positive Sentiment tweets")
+
+        pos_cloud = Image.open('resources/imgs/word_positive.png')
+        st.image(pos_cloud)
+        st.markdown("Word Cloud showing most popular words in Negative Sentiment tweets")
+
+        neg_cloud = Image.open('resources/imgs/word_negative.png')
+        st.image(neg_cloud)
 
     # Building out the predication page
     if selection == "Prediction":
