@@ -99,7 +99,7 @@ count_vect = CountVectorizer(stop_words='english', min_df= .01)
 lr_model = load_vectorizer("resources/pickles/lr_model.pkl")
 lsvc_model = load_vectorizer("resources/pickles/lsvc_model.pkl")
 svc_model = load_vectorizer("resources/pickles/svc_model.pkl")
-rfc_model = load_vectorizer("resources/pickles/rfc_model.pkl")
+rfc_model = load_vectorizer("resources/pickles/mnb_model.pkl")
 mnb_model = load_vectorizer("resources/pickles/mnb_model.pkl")
 
 
