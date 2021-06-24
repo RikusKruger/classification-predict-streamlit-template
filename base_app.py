@@ -28,7 +28,6 @@ import joblib
 import pandas as pd
 # Streamlit dependencies
 import streamlit as st
-import cv2
 
 
 # Preprocessing dependencies
